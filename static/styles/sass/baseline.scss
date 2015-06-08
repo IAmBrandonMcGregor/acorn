@@ -1,0 +1,15 @@
+
+
+// This file is parsed and injected directly into the index.html view as an inline style.
+// The purpose of this, is to deliver a barebones, minimally render-able html page.
+// After this initial render, the main.css file is loaded asynronously along with the appliation JS.
+
+/* Include Zurb Foundation 5 w/custom settings */
+@import "foundationSettings.scss";
+@import "../../bower_components/foundation/scss/foundation/components/global";
+@import "../../bower_components/foundation/scss/foundation/components/type";
+
+html, body {
+	margin: 0; padding: 0;
+	width: 100%; height: inherit;
+}
