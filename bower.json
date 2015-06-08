@@ -1,0 +1,18 @@
+{
+  "name": "acorn",
+  "version": "0.0.0",
+  "authors": [
+    "Brandon McGregor <iambrandonmcgregor@gmail.com>"
+  ],
+  "description": "\"I am the little acorn that becomes the oak.\" - Bill Murray as John Winger, Stripes (1981). Fork this project and use it to quickly start developing NodeJS backed applications.",
+  "keywords": [],
+  "main": "./app/index.html",
+  "license": "MIT. Please see the LICENSE.txt file",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": { }
+}
