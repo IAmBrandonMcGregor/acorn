@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['sass', 'browser-sync'], function () {
 
 	// Re-compile Sass when any .scss files change.
-	gulp.watch('app/styles/sass/**/*.scss', ['sass']);
+	gulp.watch('static/styles/sass/**/*.scss', ['sass']);
 
 });
 
@@ -26,7 +26,8 @@ gulp.task('default', ['sass', 'browser-sync'], function () {
 gulp.task('browser-sync', ['nodemon'], function startBrowserSync () {
 	browserSync({
 		ui: false,
-		files: ['app/**/*.js', 'app/**/*.html', 'app/**/*.css'],
+		notify: false,
+		files: ['static/**/*.js', 'static/**/*.html', 'static/**/*.css'],
 		proxy: 'localhost:3442',
 		online: false,
 		browser: ['google chrome canary'],
@@ -53,7 +54,7 @@ gulp.task('nodemon', function startNodemon (callback) {
 	return nodemon({
 		script: 'bin/www',
 		ext: '*.js *.hjs',
-		ignore: ['app/**/*.js', 'gulpfile.js']
+		ignore: ['static/**/*.js', 'gulpfile.js']
 	})
 	.on('start', function onStart() {
 		if (!isStarted) {
@@ -80,14 +81,14 @@ gulp.task('nodemon', function startNodemon (callback) {
 // Compiles Sass files into CSS and auto-prefixes them.
 // - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  - -  --
 gulp.task('sass', function compileSass () {
-	return gulp.src('app/styles/sass/**/*.scss')
+	return gulp.src('static/styles/sass/**/*.scss')
 			   .pipe(sass({
 			   		outputStyle: 'compressed',
 			   		sourceComments: 'map',
 			   		errLogToConsole: true
 			   	}))
 			   .pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR'))
-			   .pipe(gulp.dest('app/styles/css'))
+			   .pipe(gulp.dest('static/styles/css'))
 			   .pipe(browserSync.reload({stream:true}));
 });
 
