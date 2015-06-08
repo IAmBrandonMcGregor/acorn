@@ -16,7 +16,7 @@ gulp.task('default', ['sass', 'browser-sync'], function () {
 	// Re-compile Sass when any .scss files change.
 	gulp.watch('app/styles/sass/**/*.scss', ['sass']);
 
-})
+});
 
 
 // Gulp Task -- browser-sync
