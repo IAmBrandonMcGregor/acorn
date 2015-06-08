@@ -47,3 +47,8 @@
 
 // Re-Include the baseline.scss logic. For good measure.
 @import "baseline.scss";
+
+body {
+	background-color: #999;
+	transition: background-color 250ms linear;
+}
