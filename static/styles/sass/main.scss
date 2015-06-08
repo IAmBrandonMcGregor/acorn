@@ -1,4 +1,9 @@
 
+
+// The baseline.css is injected inline directly into the view.
+// After an itial render, this main.css file is loaded asyncronously.
+// Any styles that need to be present for the initial render, should be placed in baseline.scss
+
 /* Include the rest ofZurb Foundation 5 w/custom settings (some is pre-loaded in baseline.css) */
 @import "foundationSettings.scss";
 @import "../../bower_components/foundation/scss/foundation/components/grid";
@@ -40,6 +45,5 @@
 @import "../../bower_components/foundation/scss/foundation/components/visibility";
 
 
-html, body {
-	width: 100%; height: inherit;
-}
+// Re-Include the baseline.scss logic. For good measure.
+@import "baseline.scss";
